@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 
 // --- 型定義 ---
 interface ZodiacInfo {
@@ -91,7 +91,7 @@ const BIRTHSTONES: BirthstoneInfo[] = [
   { month: 4, name: 'ダイヤモンド', englishName: 'Diamond', meaning: '純潔・永遠の絆。揺るぎない信念と内面の輝きを引き出します。', colorHex: '#C8D6E5', subColorHex: '#F5F9FC' },
   { month: 5, name: 'エメラルド', englishName: 'Emerald', meaning: '幸運・幸福・新たな始まり。瑞々しい生命力と調和をもたらします。', colorHex: '#2ECC71', subColorHex: '#82E0AA' },
   { month: 6, name: 'パール（真珠）', englishName: 'Pearl', meaning: '健康・富・純粋。持ち主の優しさと品格をそっと引き立てます。', colorHex: '#F3EAE0', subColorHex: '#FFFDFB' },
-  { month: 7, name: 'ルビー', englishName: 'Ruby', meaning: '情熱・仁愛・威厳。深紅の輝きが前向きなエネルギー与えます。', colorHex: '#D81B60', subColorHex: '#F48FB1' },
+  { month: 7, name: 'ルビー', englishName: 'Ruby', meaning: '情熱・仁愛・威厳。深紅の輝きが前向きなエネルギーを与えます。', colorHex: '#D81B60', subColorHex: '#F48FB1' },
   { month: 8, name: 'ペリドット', englishName: 'Peridot', meaning: '希望・平和。太陽の石とされ、明るくポジティブな未来を照らします。', colorHex: '#9ACD32', subColorHex: '#D4EF8A' },
   { month: 9, name: 'サファイア', englishName: 'Sapphire', meaning: '慈愛・誠実・知性。冷静な判断力と揺るぎない信頼を象徴します。', colorHex: '#2952A3', subColorHex: '#7FA1E0' },
   { month: 10, name: 'オパール', englishName: 'Opal', meaning: '純真無垢・歓喜・希望。虹色の遊色効果のように多彩な才能を呼び込みます。', colorHex: '#F5B7B1', subColorHex: '#AED6F1' },
@@ -276,7 +276,7 @@ export function App() {
 
         {result ? (
           /* 診断結果画面 */
-          <div style={{ animation: 'fadeIn 0.4s ease' }}>
+          <div>
             <div style={{ background: 'rgba(255,255,255,0.92)', border: '1px solid #ebe3e0', borderRadius: '24px', padding: '32px', textAlign: 'center', marginBottom: '28px', boxShadow: '0 12px 32px rgba(92,72,82,0.06)' }}>
               <p style={{ fontSize: '0.9rem', color: '#a892c8', letterSpacing: '0.15em', marginBottom: '6px' }}>ESTIMATED BIRTH DATE</p>
               <h2 style={{ fontFamily: 'serif', fontSize: '2rem', fontWeight: 700, marginBottom: '20px' }}>
@@ -302,7 +302,7 @@ export function App() {
               
               {/* 星座 */}
               <div style={{ background: '#fff', border: '1px solid #ebe3e0', borderRadius: '24px', padding: '26px', boxShadow: '0 12px 32px rgba(92,72,82,0.06)' }}>
-                <div style={{ display: 'flex', justifyContent: 'between', alignItems: 'center', marginBottom: '14px', borderBottom: '1px dashed #ebe3e0', paddingBottom: '10px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px', borderBottom: '1px dashed #ebe3e0', paddingBottom: '10px' }}>
                   <span style={{ fontSize: '0.78rem', fontWeight: 700, color: '#a892c8' }}>星座</span>
                   <span style={{ fontSize: '0.85rem', color: '#7a6f75', fontStyle: 'italic' }}>Zodiac</span>
                 </div>
@@ -318,7 +318,7 @@ export function App() {
 
               {/* 誕生石 */}
               <div style={{ background: '#fff', border: '1px solid #ebe3e0', borderRadius: '24px', padding: '26px', boxShadow: '0 12px 32px rgba(92,72,82,0.06)' }}>
-                <div style={{ display: 'flex', justifyContent: 'between', alignItems: 'center', marginBottom: '14px', borderBottom: '1px dashed #ebe3e0', paddingBottom: '10px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px', borderBottom: '1px dashed #ebe3e0', paddingBottom: '10px' }}>
                   <span style={{ fontSize: '0.78rem', fontWeight: 700, color: '#a892c8' }}>誕生石</span>
                   <span style={{ fontSize: '0.85rem', color: '#7a6f75', fontStyle: 'italic' }}>Birthstone</span>
                 </div>
@@ -336,7 +336,7 @@ export function App() {
 
               {/* 誕生花 */}
               <div style={{ background: '#fff', border: '1px solid #ebe3e0', borderRadius: '24px', padding: '26px', boxShadow: '0 12px 32px rgba(92,72,82,0.06)' }}>
-                <div style={{ display: 'flex', justifyContent: 'between', alignItems: 'center', marginBottom: '14px', borderBottom: '1px dashed #ebe3e0', paddingBottom: '10px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px', borderBottom: '1px dashed #ebe3e0', paddingBottom: '10px' }}>
                   <span style={{ fontSize: '0.78rem', fontWeight: 700, color: '#a892c8' }}>誕生花 &amp; 花言葉</span>
                   <span style={{ fontSize: '0.85rem', color: '#7a6f75', fontStyle: 'italic' }}>Birth Flower</span>
                 </div>
@@ -358,7 +358,7 @@ export function App() {
 
               {/* ラッキーカラー */}
               <div style={{ background: '#fff', border: '1px solid #ebe3e0', borderRadius: '24px', padding: '26px', boxShadow: '0 12px 32px rgba(92,72,82,0.06)' }}>
-                <div style={{ display: 'flex', justifyContent: 'between', alignItems: 'center', marginBottom: '14px', borderBottom: '1px dashed #ebe3e0', paddingBottom: '10px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px', borderBottom: '1px dashed #ebe3e0', paddingBottom: '10px' }}>
                   <span style={{ fontSize: '0.78rem', fontWeight: 700, color: '#a892c8' }}>ラッキーカラー</span>
                   <span style={{ fontSize: '0.85rem', color: '#7a6f75', fontStyle: 'italic' }}>Lucky Color</span>
                 </div>
@@ -376,7 +376,7 @@ export function App() {
 
             {/* ラッキーナンバー（フル幅） */}
             <div style={{ background: '#fff', border: '1px solid #ebe3e0', borderRadius: '24px', padding: '26px', marginBottom: '32px', boxShadow: '0 12px 32px rgba(92,72,82,0.06)' }}>
-              <div style={{ display: 'flex', justifyContent: 'between', alignItems: 'center', marginBottom: '14px', borderBottom: '1px dashed #ebe3e0', paddingBottom: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px', borderBottom: '1px dashed #ebe3e0', paddingBottom: '10px' }}>
                 <span style={{ fontSize: '0.78rem', fontWeight: 700, color: '#a892c8' }}>ラッキーナンバー（数秘術）</span>
                 <span style={{ fontSize: '0.85rem', color: '#7a6f75', fontStyle: 'italic' }}>Lucky Number</span>
               </div>
